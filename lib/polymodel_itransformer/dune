@@ -1,0 +1,4 @@
+(library
+ (name polymodel_itransformer)
+ (modules :standard)
+ (libraries torch))
