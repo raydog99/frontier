@@ -1,0 +1,4 @@
+(library
+ (name dkf)
+ (modules :standard)
+ (libraries torch))
