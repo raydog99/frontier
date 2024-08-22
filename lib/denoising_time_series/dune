@@ -1,0 +1,4 @@
+(library
+ (name denoising_time_series)
+ (modules :standard)
+ (libraries torch))
