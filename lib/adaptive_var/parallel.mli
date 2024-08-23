@@ -1,0 +1,1 @@
+val parallel_map_chunked : chunks:int -> f:('a -> 'b Lwt.t) -> 'a list -> 'b list Lwt.t
