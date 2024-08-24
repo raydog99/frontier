@@ -1,0 +1,4 @@
+(library
+ (name chl_jd)
+ (modules :standard)
+ (libraries torch))
