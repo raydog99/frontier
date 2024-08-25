@@ -1,0 +1,4 @@
+(library
+ (name twma)
+ (modules :standard)
+ (libraries torch))
