@@ -1,0 +1,4 @@
+(library
+ (name diga)
+ (modules :standard)
+ (libraries torch))
