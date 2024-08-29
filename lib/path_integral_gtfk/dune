@@ -1,0 +1,4 @@
+(library
+ (name path_integral_gtfk)
+ (modules :standard)
+ (libraries torch))
