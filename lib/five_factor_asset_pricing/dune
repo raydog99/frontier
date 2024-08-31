@@ -1,0 +1,5 @@
+(library
+ (name five_factor_asset_pricing)
+ (modules :standard)
+ (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+ (libraries torch cmdliner logs fmt yojson))
