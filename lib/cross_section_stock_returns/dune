@@ -1,0 +1,4 @@
+(library
+ (name cross_section_stock_returns)
+ (modules :standard)
+ (libraries torch lwt cohttp-lwt-unix yojson logs logs.fmt cmdliner))
