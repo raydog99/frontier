@@ -1,0 +1,4 @@
+(library
+ (name financial_markets_cross_correlations)
+ (modules :standard)
+ (libraries torch))
