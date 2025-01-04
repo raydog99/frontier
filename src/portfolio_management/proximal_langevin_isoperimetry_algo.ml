@@ -48,14 +48,12 @@ let operator_norm m =
   let eigenvals = Tensor.symeig m in
   Tensor.index eigenvals [|[|0; -1|]|]
 
-let kl_divergence p q =
-  let open Tensor in
+let kl_divergence p q 
   let ratio = div p q in
   let log_ratio = log ratio in
   mean (mul ratio log_ratio)
 
-let step config x =
-  let open Tensor in
+let step config x 
   let z = normal_like x ~mean:0.0 ~std:(sqrt (2.0 *. config.epsilon)) in
   let x_noise = add x z in
   
@@ -91,7 +89,6 @@ module WeightedLangevin = struct
   }
 
   let step config x t =
-    let open Tensor in
     (* Compute time-dependent weight matrix *)
     let g = mul_scalar (config.weight_fn x) (config.time_factor t) in
     
@@ -123,7 +120,6 @@ end
 
 (* LSI and smoothness *)
 module Analysis = struct
-
   type analysis_result = {
     lsi_constant: float option;
     poincare_constant: float option;
@@ -141,7 +137,6 @@ module Analysis = struct
 
   let verify_smoothness trajectory l m f =
     List.map2 (fun x1 x2 ->
-      let open Tensor in
       (* Gradient smoothness *)
       let grad1 = gradient f x1 in
       let grad2 = gradient f x2 in
@@ -226,7 +221,6 @@ module Stability = struct
   }
 
   let analyze_stability config f trajectory =
-    let open Tensor in
     (* Generate perturbations *)
     let x0 = List.hd trajectory in
     let perturbations = List.init 5 (fun _ ->
